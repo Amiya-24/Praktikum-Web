@@ -4,51 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumpulan Resep Makanan Tradisional</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 align="center"><b>Kumpulan Resep Makanan Tradisional</b></h1>
-        <nav>
-            <table align="center" cellspacing="15">
-                <tr>
-                    <td><a href="#home">Home</a></td>
-                    <td><a href="#about">About Us</a></td>
-                    <td><a href="#contact">Contact</a></td>
-                </tr>
-            </table>
-        </nav>
-    </header>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Kumpulan Resep Makanan Tradisional</div>
+            <nav class="nav">
+                <a class="btn btn-primary" href="#home">Home</a>
+                <a class="btn btn-primary" href="#about">About Us</a>
+                <a class="btn btn-primary" href="#contact">Contact</a>
+            </nav>
+        </header>
 
-    <main>
-        <section id="home" align="center">
-            <h2>Selamat Datang</h2>
-            <p>Selamat datang di Kumpulan Resep Makanan Tradisional!</p>
-            <p>Mari kita jelajahi kelezatan kuliner Nusantara, dari rendang Minangkabau yang kaya rempah</p>
-            <p> hingga sate lilit Bali yang menggoda selera, dan temukan resep otentik yang siap Anda coba di rumah.</p>
-        </section>
-        <section id="recipes" align="center">
-            <h2>Resep Populer</h2>
-                <h3>Rendang</h3>
-                <p>Resep tradisional dari Minangkabau.</p>
-                <p>Rendang adalah hidangan daging sapi khas Minangkabau, Sumatera Barat,</p>
-                <p>yang dimasak perlahan dengan santan kelapa dan rempah-rempah hingga kering dan bumbu meresap,</p>
-                <p>menghasilkan rasa gurih pedas yang mendalam serta daya tahan lama sebagai makanan pengawet tradisional.</p>
-                <img src="img/rendang-daging.jpg" alt="Rendang" width="400" height="300">
+        <main>
+            <section id="home" class="home" style="text-align:center;">
+                <form class="search-bar" action="#" method="get" autocomplete="off" style="max-width:800px;margin:32px auto 24px auto;display:flex;gap:8px;">
+                    <input type="text" name="q" class="search-input" placeholder="Cari resep makanan tradisional..." aria-label="Cari resep" style="flex:1;">
+                    <button type="submit" class="btn btn-primary search-btn">Cari</button>
+                </form>
+            </section>
 
-                <h3>Sate Lilit</h3>
-                <p>Resep khas Bali yang lezat.</p>
-                <p>Sate lilit merupakan sate khas Bali yang unik, terbuat dari daging ikan atau ayam cincang yang</p>
-                <p>dibalutkan ke batang serai, dibumbui bumbu genep lengkap beraroma harum, kemudian dibakar </p>
-                <p>hingga kering, melambangkan persatuan masyarakat Bali dan kejantanan pria dalam proses pembuatannya.</p>
-                <p></p>
-                <img src="img/Sate_lilit.jpg" alt="Sate Lilit" width="400" height="300">
-        </section>
-    </main>
-    <footer>
-        <p>Learn more</p>
-        <p>Ref: 
-            <a href="https://www.cookpad.com">cookpad</a></p>
-        <p>&copy; 2025 Kumpulan Resep Makanan Tradisional</p>
-    </footer>
+            <section id="recipes">
+                <h2 style="text-align:center;">Pencarian Populer</h2>
+                <div class="grid">
+                    <div class="card card-featured">
+                        <img src="img/rendang-daging.jpg" alt="Rendang">
+                        <div class="card-title">Rendang</div>
+                        <div class="card-desc">
+                            <p>Resep tradisional dari Minangkabau.</p>
+                            <p>Rendang adalah hidangan daging sapi khas Minangkabau, Sumatera Barat, yang dimasak perlahan dengan santan kelapa dan rempah-rempah hingga kering dan bumbu meresap, menghasilkan rasa gurih pedas yang mendalam serta daya tahan lama sebagai makanan pengawet tradisional.</p>
+                        </div>
+                    </div>
+                    <div class="card card-featured">
+                        <img src="img/Sate_lilit.jpg" alt="Sate Lilit">
+                        <div class="card-title">Sate Lilit</div>
+                        <div class="card-desc">
+                            <p>Resep khas Bali yang lezat.</p>
+                            <p>Sate lilit merupakan sate khas Bali yang unik, terbuat dari daging ikan atau ayam cincang yang dibalutkan ke batang serai, dibumbui bumbu genep lengkap beraroma harum, kemudian dibakar hingga kering, melambangkan persatuan masyarakat Bali dan kejantanan pria dalam proses pembuatannya.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about" style="text-align:center;">
+                <h2>Tentang Kami</h2>
+                <div class="card" style="max-width:600px;margin:0 auto;">
+                    <div class="card-desc">
+                        <p><b>Kumpulan Resep Makanan Tradisional</b> adalah website yang didedikasikan untuk melestarikan dan membagikan resep-resep otentik dari berbagai daerah di Indonesia. Kami percaya bahwa kekayaan kuliner Nusantara adalah warisan budaya yang patut dijaga dan dikenalkan ke generasi berikutnya.</p>
+                        <p>Tim kami terdiri dari pecinta kuliner, penulis, dan kontributor yang berkomitmen menghadirkan resep yang teruji, mudah diikuti, dan tetap menjaga cita rasa asli.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="footer-flex">
+                <div class="footer-col">
+                    <b>Kontak</b>
+                    <ul class="footer-list">
+                        <li>Email: <a href="mailto:info@reseptradisional.id">info@reseptradisional.id</a></li>
+                        <li>Instagram: <a href="https://instagram.com/reseptradisional.id" target="_blank">@reseptradisional.id</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <b>Referensi</b>
+                    <ul class="footer-list">
+                        <li><a href="https://www.cookpad.com" target="_blank">Cookpad</a></li>
+                        <li><a href="https://www.masakapahariini.com" target="_blank">Masak Apa Hari Ini</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <div class="footer-copyright">
+                &copy; 2025 Kumpulan Resep Makanan Tradisional. All rights reserved.
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
