@@ -1,6 +1,6 @@
 :root {
-  --primary: #2e8b57;
-  --secondary: #f4a460;
+  --primary: #42a0bd;
+  --secondary: #42a0bd;
   --bg: #f9f9f9;
   --text: #222;
   --radius: 12px;
@@ -59,14 +59,14 @@ body {
   color: #fff;
 }
 .btn-primary:hover {
-  background: #246b45;
+  background: #42a0bd;
 }
 .btn-secondary {
   background: var(--secondary);
   color: #fff;
 }
 .btn-secondary:hover {
-  background: #d4883a;
+  background: #42a0bd;
 }
 
 .grid {
@@ -167,12 +167,12 @@ body {
   margin: 24px 0 12px 0;
   opacity: 0.2;
   border: none;
-  border-top: 1.5px solid #6D94C5;
+  border-top: 1.5px solid #527aab;
 }
 .footer-copyright {
   text-align: center;
   font-size: 0.95rem;
-  color: #6D94C5;
+  color: #527aab;
 }
 
 
