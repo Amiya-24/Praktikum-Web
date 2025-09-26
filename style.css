@@ -61,6 +61,11 @@ body {
 .btn-primary:hover {
   background: #42a0bd;
 }
+.nav a.active {
+  box-shadow: 0 2px 0 0 #fff, 0 4px 0 0 var(--primary);
+  color: var(--primary) !important;
+  background: #eaf6fa;
+}
 .btn-secondary {
   background: var(--secondary);
   color: #fff;
