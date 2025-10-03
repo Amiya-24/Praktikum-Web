@@ -53,6 +53,7 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   font-weight: 500;
+  text-decoration: none; /* Menambahkan ini agar link tidak bergaris bawah */
 }
 .btn-primary {
   background: var(--primary);
@@ -80,13 +81,18 @@ body {
   gap: 28px;
 }
 
+/* PERBAIKAN: Aturan CSS pengganti inline style */
+#home, #about, #recipes h2 {
+    text-align: center;
+}
+
 /* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: 0;
-  margin-right: 0;
+  max-width: 700px;
+  margin: 32px auto 24px auto;
 }
 .search-input {
   padding: 8px 14px;
@@ -124,6 +130,10 @@ body {
 .card-featured {
   border: 2px solid var(--primary);
 }
+.card.about-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
 .card img {
   width: 100%;
   max-width: 220px;
@@ -140,6 +150,24 @@ body {
   font-size: 1rem;
   color: #444;
   text-align: center;
+}
+.no-results {
+    text-align: center;
+    width: 100%;
+}
+
+.recipe-details {
+    display: none;
+    margin-top: 12px;
+    text-align: left;
+}
+
+.recipe-toggle {
+    cursor: pointer;
+}
+
+.recipe-toggle:hover {
+    color: #367d93;
 }
 
 /* Footer */
@@ -180,32 +208,117 @@ body {
   color: #527aab;
 }
 
+/* Popup Modal */
+#recipe-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
 
+#recipe-modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius);
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-btn:hover {
+    color: #000;
+}
+
+#modal-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+#modal-title {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+#modal-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.recipe-card-clickable {
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
 @media (max-width: 800px) {
     .container {
         padding: 16px 6px;
     }
-  .header {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-}
-.nav {
-    width: 100%;
-    justify-content: flex-start;
-}
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 600px) {
     .search-bar {
         flex-direction: column;
-        gap: 8px;
         width: 100%;
         max-width: 100%;
     }
     .search-input {
         width: 100%;
         min-width: 0;
+    }
+    .footer-flex {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-list {
+        text-align: center;
     }
 }
 
@@ -218,24 +331,8 @@ body {
     }
     .card {
         padding: 12px;
-        .card img {
-            max-width: 100%;
-        }
     }
-
-@media (max-width: 600px) {
-      .footer-flex {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-      }
-      .footer-col {
-        min-width: unset;
-        width: 100%;
-        text-align: center;
-      }
-      .footer-list {
-        text-align: center;
-      }
+    .card img {
+        max-width: 100%;
     }
 }
