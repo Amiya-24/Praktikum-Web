@@ -156,20 +156,6 @@ body {
     width: 100%;
 }
 
-.recipe-details {
-    display: none;
-    margin-top: 12px;
-    text-align: left;
-}
-
-.recipe-toggle {
-    cursor: pointer;
-}
-
-.recipe-toggle:hover {
-    color: #367d93;
-}
-
 /* Footer */
 .footer {
   text-align: center;
